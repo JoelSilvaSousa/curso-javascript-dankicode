@@ -8,31 +8,20 @@
 <body>
     <script>
         //Funções 
-
-        function teste(){
-            //Executado quando a função for chamada
-            console.log("Chamando a função teste");
+        /*
+        var func = function(){
+            alert("Olá mundo");
         }
 
-        function teste2(nome, idade){
-            console.log("O nome chamado é: "+nome);
-            console.log("Tem "+idade+" anos");
-            console.log("---------------------");
-        }
+        func();
+        */
 
-        function pegarNome(parametro){
-            if(parametro == 1){
-                return "Guilherme";
-            }else{
-                return "Outro nome";
-            }
-        
-        }
+        //Declarando função sem nome e chamando logo em seguida
 
-        var nome = pegarNome(651615);
-        console.log(nome);
+       (function(){
+            alert("Função sem nome");
+       })();
 
-        
 </script>
 </body>
 </html>
