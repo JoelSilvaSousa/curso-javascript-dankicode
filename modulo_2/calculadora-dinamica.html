@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Aplicação calculadora dinâmica
+
+        //Queremos um número iniciall
+        //Queremos um sinal (tipo de operação)
+        //Queremos um número final
+
+        var n1 = prompt("Informe um número:");
+
+        var sinal = prompt("Informe o sinal da sua operação: ...");
+
+        while(sinal != '+' && sinal != '-' && sinal != '*' && sinal != '/'){
+            alert("Sinal inválido, por favor insira o sinal novamente!");
+
+            var sinal = prompt("Informe o sinal da sua operação: ...");
+        }
+        var n2 = prompt("Informe outro número:");
+
+        n1 = parseInt(n1);
+        n2 = parseInt(n2);
+
+        var resultado = 0;
+
+        if(sinal == '+'){
+            resultado = n1+n2;
+        }else if(sinal == '-'){
+            resultado = n1-n2;
+        }else if(sinal == '*'){
+            resultado = n1*n2;
+        }else if(sinal == '/'){
+            resultado = n1/n2;
+        }
+            
+        alert("O resultado é: "+resultado);
+
+    </script>
+</body>
+</html>
