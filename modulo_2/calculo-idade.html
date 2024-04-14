@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        var anoAtual = prompt("Em qual ano estamos?");
+        var anoNasc = prompt("Digite seu ano de nascimento:");
+
+        while(anoNasc >= anoAtual){
+            alert("Ano de nascimento inválido, por favor digite o ano corretamente!");
+            var anoNasc = prompt("Digite novamente seu ano de nascimento");
+        }
+        
+        var idade = anoAtual - anoNasc;
+
+        alert("Você tem "+idade+" anos");
+    </script>
+</body>
+</html>
