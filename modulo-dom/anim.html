@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        /*
         .box{
             width: 200px;
             height: 200px;
@@ -15,21 +16,54 @@
             transition: 1s;
             margin-left: 90px;
         }
+        */
+        .conteudo h2 span{
+            font-size: 13px;
+            cursor: pointer;
+        }
+        .conteudo p{
+            overflow: hidden;
+            height: 10px;
+            transition: 1s;
+        }
+        .mostrar{
+            height: 200px !important; 
+        }
     </style>
 </head>
 <body>
-    <div class = 'box'></div>
+    <!--<div class = 'box'></div>-->
+    <div class = "conteudo">
+        <h2>Título do conteúdo <span>Ver Mais!</span></h2>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+
+        </p>
+    </div>
     <script>
-        var box = document.querySelectorAll('box')[0];
+
         /*
+        var box = document.querySelectorAll('box')[0];
+        
         setTimeout(()=>{
             box.classList.add('aniEsq');
         }
         ,1000
         );
-        */
+        
        box.addEventListener('click',()=>{
         box.classList.add('aniEsq');
+       });
+       */
+
+       document.querySelector('conteudo').addEventListener('click',function(){
+           var conteudo = document.querySelector('conteudo p');
+           if(conteudo.classList.contains('mostar')){
+            alert('esconder o conteudo');
+            conteudo.classList.remove('mostrar');
+           }else{
+            conteudo.classList.add('mostar');
+            alert('mostrar o conteudo');
+           }
        });
     </script>
 </body>
