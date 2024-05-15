@@ -55,13 +55,13 @@
        });
        */
 
-       document.querySelector('conteudo').addEventListener('click',function(){
-           var conteudo = document.querySelector('conteudo p');
-           if(conteudo.classList.contains('mostar')){
+       document.querySelector('.conteudo').addEventListener('click',function(){
+           var conteudo = document.querySelector('.conteudo p');
+           if(conteudo.classList.contains('.mostar')){
             alert('esconder o conteudo');
-            conteudo.classList.remove('mostrar');
+            conteudo.classList.remove('.mostrar');
            }else{
-            conteudo.classList.add('mostar');
+            conteudo.classList.add('.mostar');
             alert('mostrar o conteudo');
            }
        });
