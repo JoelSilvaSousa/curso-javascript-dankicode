@@ -24,11 +24,34 @@
            });
            */
 
+           /*
            const arr = ["Joel","Ana","Sabrina","Carol","Juliana"];
 
            const [a,b,...c] = arr;
 
            alert(c[0]);
+           */
+           /*
+           var nomes = [
+            {
+                nome:"Leticia"
+           },
+           {
+                nome:"Marta"
+           }
+        ];
+
+           const objetos = [...nomes,{
+            nome:"Joel"
+           }];
+
+           console.log(objetos);
+           */
+
+           function testes(...numeros){
+                console.log(numeros[0][0]);
+           }
+           testes([1,2,3,4,5,6]);
         </script>
     </body>
 </html>
