@@ -6,8 +6,8 @@ addEventListener('click',()=>{
     var precoProduto = document.querySelector('input[name=price]');
 
     items.push({
-        nome: nomeProduto,
-        valor: precoProduto
+        nome: nomeProduto.value,
+        valor: precoProduto.value
     })
 
     /*
@@ -19,6 +19,7 @@ addEventListener('click',()=>{
         listaProduto.innerHTML="";
         items.map(function(val){
             soma+=parseFloat(val.valor);
+
             listaProduto.innerHTML +=`
                 <div class="lista-produto-single">
                     <h3>`+val.nome+`</h3>
@@ -34,6 +35,11 @@ addEventListener('click',()=>{
     let elementoSoma = document.querySelector('.soma-produto h1');
     elementoSoma.innerHTML = 'R$'+soma;
 
-        
+    document.querySelector('button[name=limpar]').
+    addEventListener('click',()=>{
+        items = [];
+        document.querySelector('.lista-produto').innerHTML = "";
+        document.querySelector('.soma-produto h1').innerHTML = "R$0";
+    })
     
 });
