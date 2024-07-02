@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <title>Pokedex</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="main">
+            <h2>Pokedex</h2>
+        
+            <div class="pokemon-boxes">
+
+                <div class="pokemon-box">
+                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png">
+                    <p>Ditto</p>
+                
+                </div>
+                <div class="pokemon-box">
+                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png">
+                    <p>Ditto</p>
+                
+                </div>
+                <div class="pokemon-box">
+                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png">
+                    <p>Ditto</p>
+                
+                </div>
+                <div class="pokemon-box">
+                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png">
+                    <p>Ditto</p>
+                
+                </div>
+                <div class="pokemon-box">
+                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png">
+                    <p>Ditto</p>
+                
+                </div>
+                <div class="pokemon-box">
+                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png">
+                    <p>Ditto</p>
+                
+                </div>
+            </div>
+        </div>
+        <script>
+            fetch('https://pokeapi.co/api/v2/pokemon?limit=10').
+            then(response => response.json()).
+            then(allpokemon => console.log(allpokemon))
+        </script>
+
+    </body>
+</html>
