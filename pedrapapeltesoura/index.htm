@@ -17,6 +17,7 @@
             }
         </style>
         <h1 style="text-align:center">Pedra, papel ou tesoura!</h1>
+        <h2 class="vencedor"></h2>
         <hr>
         <div class="align">
             <div class="player-options">
@@ -35,11 +36,8 @@
             var playerOpt = "";
             var inimigoOpt = "";
 
-            function resetOpacityPlayer(){
-                for(var i=0; i < elementos.length; i++){
-                    elementos[i].style.opacity = 0.3;
-                };
-            }
+            
+            
             function resetInimigo(){
                 const enemyOptions = document.querySelectorAll('.enemy-options div');
                 for(var i =0; i < enemyOptions.length; i++){
@@ -60,7 +58,14 @@
                     }
                 }
             }
-        
+            
+
+            function resetOpacityPlayer(){
+                for(var i=0; i < elementos.length; i++){
+                    elementos[i].style.opacity = 0.3;
+                };
+            }
+
             for(var i=0; i < elementos.length; i++){
                 elementos[i].addEventListener('click', function(t){
                     resetOpacityPlayer();
