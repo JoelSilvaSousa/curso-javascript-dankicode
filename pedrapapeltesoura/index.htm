@@ -5,7 +5,7 @@
             .player-options img,
             .enemy-options img
             {
-                max-width: 200px;
+                max-width: 150px;
                 opacity: 0.3;
                 cursor: pointer;
             }
@@ -17,7 +17,8 @@
             }
         </style>
         <h1 style="text-align:center">Pedra, papel ou tesoura!</h1>
-        <h2 class="vencedor"></h2>
+        <h2 class="vencedor" style="text-align:center"></h2>
+        
         <hr>
         <div class="align">
             <div class="player-options">
@@ -36,7 +37,45 @@
             var playerOpt = "";
             var inimigoOpt = "";
 
-            
+            let vencedor = document.querySelector('.vencedor');
+
+            function validarVitoria(){
+                if(playerOpt == 'papel'){
+                    if(inimigoOpt == 'papel'){
+                        //Empate
+                        vencedor.innerHTML = 'O jogo foi empatado';
+                    }else if(inimigoOpt == 'tesoura'){
+                        //Inimigo ganhou
+                        vencedor.innerHTML = 'Inimigo ganhou';
+                    }else if(inimigoOpt == 'pedra'){
+                        //Player ganhou
+                        vencedor.innerHTML = 'Você ganhou';
+                    }
+                }
+                if(playerOpt == 'tesoura'){
+                    if(inimigoOpt == 'papel'){
+                        vencedor.innerHTML = 'Você ganhou';
+                        
+                    }else if(inimigoOpt == 'tesoura'){
+                        vencedor.innerHTML = 'O jogo foi empatado';
+                        
+                    }else if(inimigoOpt == 'pedra'){
+                        vencedor.innerHTML = 'Inimigo ganhou';
+                    }
+                }
+                if(playerOpt == 'pedra'){
+                    if(inimigoOpt == 'papel'){
+                        
+                        vencedor.innerHTML = 'Inimigo ganhou';
+                    }else if(inimigoOpt == 'tesoura'){
+                        
+                        vencedor.innerHTML = 'Você ganhou';
+                    }else if(inimigoOpt == 'pedra'){
+                        vencedor.innerHTML = 'O jogo foi empatado';
+                        
+                    }
+                }
+            }
             
             function resetInimigo(){
                 const enemyOptions = document.querySelectorAll('.enemy-options div');
@@ -44,7 +83,7 @@
 
                     
                     enemyOptions[i].childNodes[0].style.opacity = 0.3;
-                    inimigoOpt = enemyOptions[i].childNodes[0].getAttribute('opt');
+                    
                 }
             }
             function inimigoJogar(){
@@ -55,9 +94,11 @@
                 for(var i =0; i < enemyOptions.length; i++){
                     if(i == rand){
                         enemyOptions[i].childNodes[0].style.opacity = 1;
+                        inimigoOpt = enemyOptions[i].childNodes[0].getAttribute('opt');
                     }
                 }
             }
+            
             
 
             function resetOpacityPlayer(){
@@ -73,6 +114,8 @@
                     playerOpt = t.target.getAttribute('opt');
 
                     inimigoJogar();
+
+                    validarVitoria();
                     
                 });
             }
